@@ -1,0 +1,3 @@
+[submodule "sda_stream2"]
+	path = sda_stream2
+	url = git@github.com:bmn/sda_stream2.git
