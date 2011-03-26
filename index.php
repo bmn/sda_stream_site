@@ -52,7 +52,7 @@
           'raw'         => $raw,
         ))
           ->set_embed_dimensions(320, 260)
-          ->sort('return strcmp($a["user_name"], $b["user_name"])', true);
+          ->sort('return strcasecmp($a["user_name"], $b["user_name"])', true);
         $online = $streams->filter('return ($a["online"])');
         $offline = $streams->filter('return (!$a["online"])');
         $online_ct = count($online);
