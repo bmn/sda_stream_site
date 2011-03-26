@@ -23,7 +23,6 @@ $apis = array(
     "tiki's-mega-man-stuff" => "Mega Man classic & X series",
     "house-of-cake" => "Blaster Master, random stuff",
     "lowball-speedruns" => "Actraiser 2",
-    "go-go-bmn" => "Metal Gear Solid 2, Uplink, Sonic Unleashed, casual gaming",
     "blast-corps" => "Blast Corps",
     "ucpro-s-speedrun-attemtps" => "Super Mario Bros. Wii",
     "craptacular-play" => "EvilJogga: He's too cool for school. That's why he's at university.",
@@ -75,7 +74,6 @@ $apis = array(
     "icheatatgolf" => "Super Metroid",
     "kbladeruns" => "Stuff",
     "0xwas" => "Stuff",
-    "cosmo-oot" => "Super Monkey Ball, Ocarina of Time",
     "lolaxon" => "Super Mario 64",
     "nhouzxm" => "Generic gaming",
     "ffgamer86" => "Spanky's Quest, LTTP, Other",
@@ -103,8 +101,9 @@ $apis = array(
     "shadowjacky" => "Rocket Knight Adventures, Aero The Acrobat, Misc",
   ),
   "justin" => array(
-    "gogobmn"   => "bmn on justin.tv",
+    "gogobmn" => "Metal Gear Solid 2, Uplink, Sonic Unleashed, casual gaming",
     "sunjiano" => "Super Mario 64, Super Monkey Ball",
+    "cosmowright" => "Super Monkey Ball, Ocarina of Time",
   ),
 );
 
