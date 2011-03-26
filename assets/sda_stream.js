@@ -55,7 +55,7 @@ function sda_stream() {
     this.entry_width = 332;
     this.window_width = self.innerHeight ? self.innerWidth : (document.documentElement && document.documentElement.clientHeight) ? document.documentElement.clientWidth : document.body.clientWidth;
     this.max_per_row = Math.floor(this.window_width / this.entry_width);
-    $('#online').width( Math.max(ct, this.max_per_row) * this.entry_width);
+    $('#online').width( Math.min(ct, this.max_per_row) * this.entry_width);
   };
   
   // Reset the timer
@@ -93,7 +93,7 @@ function sda_stream() {
           log = '<p class="e1024">' + l.user_name + ' has come online.</p>';
         }
       }
-      this.set_online_width($('#online').has('div').length);
+      this.set_online_width($('#online > div').length);
     }
     
     // Update the log
