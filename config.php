@@ -75,7 +75,6 @@ $apis = array(
     "icheatatgolf" => "Super Metroid",
     "kbladeruns" => "Stuff",
     "0xwas" => "Stuff",
-    "cosmo-oot" => "Super Monkey Ball, Ocarina of Time",
     "lolaxon" => "Super Mario 64",
     "nhouzxm" => "Generic gaming",
     "ffgamer86" => "Spanky's Quest, LTTP, Other",
@@ -103,8 +102,9 @@ $apis = array(
     "shadowjacky" => "Rocket Knight Adventures, Aero The Acrobat, Misc",
   ),
   "justin" => array(
-    "gogobmn"   => "bmn on justin.tv",
+    "gogobmn" => "bmn on justin.tv",
     "sunjiano" => "Super Mario 64, Super Monkey Ball",
+    "cosmowright" => "Super Monkey Ball, Ocarina of Time",
   ),
 );
 
