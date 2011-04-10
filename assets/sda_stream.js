@@ -62,7 +62,12 @@ function sda_stream() {
   this.reset_timer = function(element, timer) {
     element.countdown('change', {until: +timer});
     return true;
-  }
+  };
+  
+  // Clean up channel names
+  this.clean = function(c) {
+    return c.replace(/[^a-z0-9_-]/i, '-');
+  };
   
   this.callback = {'update_stream': {}};
   // Stream update (success)
@@ -75,6 +80,7 @@ function sda_stream() {
     if (typeof(ar) == 'object') {
       for (i = 0; i < ar.length; i++) {
         l = ar[i];
+        cls = l.api + '_' + this.clean(l.channel_name);
         cls = l.api + '_' + l.channel_name;
         if (
           ($('#online').has('div.' + cls).length) &&
