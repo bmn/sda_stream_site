@@ -58,9 +58,9 @@
         $online_ct = count($online);
       ?>
       <h2>Streaming Now...</h2>
-      <?php if (count($online) == 0): ?>
+      <div id="no1here"<?php if (count($online) > 0) echo ' class="hidden"'; ?>>
         No-one streaming right now.
-      <?php endif ?>
+      </div>
       <div id="online"<?php if ($_COOKIE['hide_embed'] == 1) { ?> class="hidden"<?php } ?>>
         <?php
           foreach($online as $entry) {
