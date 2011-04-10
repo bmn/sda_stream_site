@@ -123,7 +123,7 @@ function sda_stream() {
     'timer':      $('#timer'),
     'timer_sda':  $('#timer_sda')
   };
-  this.set_online_width();
+  this.set_online_width($('#online > div').length);
   this.element.timer.countdown({until: +this.update_timeout, compact: true, format: 'MS', layout: '{snn}', onExpiry: $.proxy(this, 'update_stream')});
   //this.element.timer_sda.countdown({until: +this.update_sda_timeout, compact: true, format: 'MS', layout: '{mn}:{snn}', onExpiry: $.proxy(this, 'update_sda')});
   
