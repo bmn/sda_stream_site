@@ -27,7 +27,7 @@ function sda_stream(o) {
       'error':    function(opts, status) {
         if (status == 'timeout') error = 'Auto-update timed out.';
         else if (status == 'error') error = 'Problem loading auto-update.';
-        this.element.debug_log.html('<p class="e512">' + error + 'Trying again in ' + this.update_timeout + ' seconds.</p>');
+        this.element.debug_log.html('<p class="e512">' + error + ' Trying again in ' + this.update_timeout + ' seconds.</p>');
         this.element.debug.addClass('error');
       },
       'success':  this.callback.update_stream.success
