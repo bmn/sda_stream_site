@@ -54,7 +54,7 @@
           ->set_embed_dimensions(320, 260)
           ->sort('return strcasecmp($a["user_name"], $b["user_name"])', true);
         $online = $streams->filter('return ($a["online"])');
-        $offline = $streams->filter('return (!$a["online"])');
+        $all = $streams->results;
         $online_ct = count($online);
       ?>
       <h2>Streaming Now...</h2>
@@ -78,11 +78,14 @@ HTML;
       <h2>Lazy Bums...</h2>
       <div id="offline">
         <?php
-          $content = array();
-          foreach ($offline as $entry) {
+          $content = $startup = array();
+          foreach ($all as $entry) {
             $entry['class'] = $entry['api'].'_'.str_replace("'", '-', $entry['channel_name']);
+            $hidden = ($entry['online']) ? ' hidden' : '';
+            $startup[$entry['class']] = ($entry['online']);
             print <<<HTML
-            <span class="entry {$entry['class']}"><a href="{$entry['channel_url']}" title="{$entry['synopsis']}">{$entry['user_name']}</a></span>
+            <span class="new entry {$entry['class']}{$hidden}"><a href="{$entry['channel_url']}" title="{$entry['synopsis']}">{$entry['user_name']}</a></span>
+            
 HTML;
           }
         ?>
@@ -124,6 +127,7 @@ HTML;
     <script type="text/javascript" src="assets/sda_stream.js"></script>
     <script type="text/javascript">
       sda = new sda_stream();
+      sda.listed = <?php echo json_encode($startup); ?>;
     </script>
 
   </body>

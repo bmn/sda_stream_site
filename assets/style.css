@@ -88,7 +88,7 @@ pre {
   font-size: 20px;
 }
 
-#online .alternate object, #online.hidden object, #status img, #status, #timer.hidden, #no1here.hidden { display: none }
+#online .alternate object, #online.hidden object, #status img, #status, #timer.hidden, #no1here.hidden, #offline .hidden { display: none }
 #online.hidden .alternate object, #status.active { display: block }
 #status img.active { display: inline }
 
