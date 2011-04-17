@@ -106,7 +106,7 @@ HTML;
         <p>The &#10063; boxes on the screen toggle between showing and hiding the Flash streams on this page. The one at the top corner affects all the streams, and the one above each stream affects that stream only. Your setting is saved in a cookie; you can use this if Flash slows your computer too much.</p>
         <p>The status updates every 30 seconds; this is shown at the bottom-right corner of the screen. If your Internet connection is lost, it may get stuck loading (the circular icon). If this happens, please refresh the page.</p>
         <p>Ustream.tv and Justin.tv are supported by this page. If you stream on another site, feel free to ask if it can be added. This depends on the site's API functionality, and how open it is, however, so it may not be possible.</p>
-        <p>This page uses the <a href="https://github.com/bmn/sda_stream">sda_stream</a> library. Created by Ian "bmn" Bennett 2010-11. If you see "gogobmn" streaming, come say hi sometime...</p>
+        <p>This page uses the <a href="https://github.com/bmn/sda_stream2">sda_stream2</a> library. Created by Ian "bmn" Bennett 2010-11. If you see "gogobmn" streaming, come say hi sometime...</p>
       </div>
     </div>
     <div id="debug">
