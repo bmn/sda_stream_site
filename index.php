@@ -126,7 +126,9 @@ HTML;
     <script type="text/javascript" src="assets/google-analytics.js"></script>
     <script type="text/javascript" src="assets/sda_stream.js"></script>
     <script type="text/javascript">
-      sda = new sda_stream();
+      sda = new sda_stream(
+        {'url':'http://www.w00ty.com/sda/stream/sda_stream2/cache/sda_stream.js'}
+      );
       sda.listed = <?php echo json_encode($startup); ?>;
     </script>
 
