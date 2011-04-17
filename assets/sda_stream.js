@@ -1,4 +1,4 @@
-function sda_stream() {
+function sda_stream(o) {
   // Update the site status
   this.update_sda = function() {
     $.jsonp({
@@ -19,7 +19,7 @@ function sda_stream() {
   // Update the stream status
   this.update_stream = function() {
     $.jsonp({
-      'url':      'sda_stream2/sda_stream.php',
+      'url':      this.url,
       'callback': 'sda_stream',
       'timeout':  15000,
       'context':  this,
@@ -118,6 +118,8 @@ function sda_stream() {
   };
   
   // Set us up
+  var o = (typeof o == 'object') ? o : {};
+  this.url = o['url'] || 'sda_stream2/sda_stream.php';
   this.update_timeout = 30;
   this.update_sda_timeout = 15*60;
   this.element = {
