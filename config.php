@@ -6,7 +6,6 @@
 $apis = array(
   'ustream' => array(
     "0xwas" => "Stuff",
-    "animeowzerz" => "Mystical Ninja 64, Donkey Kong 64, Zelda OoT",
     "animustactics" => "Batman, Castlevania RoB &amp; SotN, Final Fantasy VII, requests",
     "asdfljg" => "Sonic 4 Episode 1",
     "battalion-wars-2-speedrun" => "Batallion Wars 2",
@@ -30,7 +29,6 @@ $apis = array(
     "elminster45" => "3-D Zelda",
     "emptyeye's-speedrun-practice" => "Air Fortress, Phantasy Star II casual play",
     "essentia-s-speedruns" => "Final Fantasy 6, Donkey Kong Country 2",
-    "exos-stream" => "SNES, GB, N64, PSX and PS2",
     "feasel-vision" => "NES, Xbox 360",
     "ffgamer86" => "Spanky's Quest, LTTP, Other",
     "fisherrob-channel" => "Stuff",
@@ -94,11 +92,12 @@ $apis = array(
     "ucpro-s-speedrun-attemtps" => "Super Mario Bros. Wii",
     "vorpaledge" => "Rocket Knight Adventures, Super Metroid",
     "worxx" => "ALTTP, Mario Kart, Mario RPG, Off-Road, Donkey Kong Country, Castlevania, Super Metroid",
-    "yoshiiscool" => "Megaman series",
     "zenicreverie" => "Vandal Hearts, other stuff",
     "zyre-s-gaming-vids" => "Skies of Arcadia Legends",
-    //"negazugs-gaming" => "Portal",
     "exes-stream" => "Super Mario 64, Biohazard 2, Zelda: Ocarina of Time, other gaming",
+    "slipomatic" => "Random gaming",
+    "opario" => "Ico, Shadow of the Colossus, Kingdom Hearts, KH: Chain of Memories, KHII",
+    "let-s-play-mass-effect" => "Mass Effect 2",
   ),
   "justin" => array(
     "cosmowright" => "Super Monkey Ball, Ocarina of Time",
@@ -112,6 +111,12 @@ $apis = array(
     "sunjiano" => "Super Mario 64, Super Monkey Ball",
     "tiki77747" => "Mega Man classic & X series",
     "kiyura" => "Enter the Matrix",
+    "playe" => "Ocarina of Time",
+    "honorablejay" => "Arkham Asylum, Jedi Academy, Vampire: Bloodlines",
+    "animeowzerz" => "Mystical Ninja 64, Donkey Kong 64, Zelda OoT",
+    "yoshiiscool" => "Megaman series",
+    "sportacus84" => "F.E.A.R, Batman Arkham Asylum, Spolsion Man, Dead Rising 2, Perfect Dark",
+    "exosda" => "SNES, GB, N64, PSX and PS2",
   ),
 );
 
