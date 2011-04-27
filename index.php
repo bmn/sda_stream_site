@@ -50,8 +50,8 @@
           'default_api' => $default_api,
           'single'      => $single,
           'raw'         => $raw,
+          'post'        => $post,
         ))
-          ->set_embed_dimensions(320, 260)
           ->sort('return strcasecmp($a["user_name"], $b["user_name"])', true);
         $online = $streams->filter('return ($a["online"])');
         $all = $streams->results;

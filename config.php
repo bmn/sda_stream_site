@@ -124,6 +124,6 @@ $include = array('user_name', 'channel_name', 'channel_url', 'embed_stream', 'on
 $callback = 'sda_stream';
 $ttl = 0.5;
 
-$run = function($s) {
-  echo $s->set_embed_dimensions(320, 260)->output('jsonp');
+$post = function($s) {
+  $s->set_embed_dimensions(320, 260);
 };
