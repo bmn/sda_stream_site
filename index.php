@@ -2,6 +2,7 @@
 <html>
   <head>
     <title>Speed Demos Archive Live Streamers</title>
+    <link rel="shortcut icon" href="/sda/favicon.ico" type="image/x-icon" />
     <link href="assets/style.css" type="text/css" rel="stylesheet" media="screen"/>
   </head>
   <body>
