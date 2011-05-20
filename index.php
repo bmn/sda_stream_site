@@ -23,7 +23,7 @@
     
     <div id="wrapper">
     
-      <h1><a href="http://www.speeddemosarchive.com">Speed Demos Archive</a> Ustreamers</h1>
+      <h1><a href="http://www.speeddemosarchive.com">Speed Demos Archive</a> Live Streams</h1>
       <!--
       <h2>New Year Poll &nbsp;&nbsp;&nbsp;<a href="javascript:$('#poll').toggle()">&#10063;</a></h2>
       <div id="poll">
