@@ -137,3 +137,5 @@ $ttl = 0.5;
 $post = function(&$s) {
   $s->set_embed_dimensions(320, 260);
 };
+
+SDAExceptions::set_error_level(E_USER_NOTICE);
