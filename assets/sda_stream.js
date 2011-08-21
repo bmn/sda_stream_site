@@ -82,8 +82,9 @@ function sda_stream(o) {
         l = ar[i];
         cls = l.api + '_' + this.clean(l.channel_name);
         was_online = this.listed[cls];
+        if (!l['screenname']) l.screenname = l.user_name;
         if (typeof was_online == 'undefined') {
-          $('#offline').prepend('<span class="entry new ' + cls + '"><a href="' + l.channel_url + '" title="' + l.synopsis + '">' + l.user_name + '</a></span>');
+          $('#offline').prepend('<span class="entry new ' + cls + '"><a href="' + l.channel_url + '" title="' + l.synopsis + '">' + l.screenname + '</a></span>');
           was_online = false;
         }
         if ( (l.online == false) && (was_online == true) )  {
@@ -92,7 +93,7 @@ function sda_stream(o) {
           log = '<p class="e1024">' + l.user_name + ' has gone offline.</p>\n';
         }
         else if ( (l.online == true) && (was_online == false) )  {
-          $('#online').prepend('<div class="entry ' + cls + '"><h3><a href="' + l.channel_url + '">' + l.user_name + '</a> <a class="toggle" href="javascript:sda.toggle_embed(\'' + cls + '\')" title="Show/Hide Embed">&#10063;</a></h3>' + l.embed_stream + '<div class="synopsis">' + l.synopsis + '</div></div>');
+          $('#online').prepend('<div class="entry ' + cls + '"><h3><a href="' + l.channel_url + '">' + l.screenname + '</a> <a class="toggle" href="javascript:sda.toggle_embed(\'' + cls + '\')" title="Show/Hide Embed">&#10063;</a></h3>' + l.embed_stream + '<div class="synopsis">' + l.synopsis + '</div></div>');
           $('#offline span.' + cls).addClass('hidden');
           log = '<p class="e1024">' + l.user_name + ' has come online.</p>';
         }

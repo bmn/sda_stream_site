@@ -65,10 +65,11 @@
       <div id="online"<?php if ($_COOKIE['hide_embed'] == 1) { ?> class="hidden"<?php } ?>>
         <?php
           foreach($online as $entry) {
+            if (!$entry['screenname']) $entry['screenname'] = $entry['user_name'];
             $entry['class'] = $entry['api'].'_'.str_replace("'", '-', $entry['channel_name']);
             print <<<HTML
         <div class="entry {$entry['class']}">
-          <h3><a href="{$entry['channel_url']}">{$entry['user_name']}</a> <a class="toggle" href="javascript:sda.toggle_embed('{$entry['class']}')" title="Show/Hide Embed">&#10063;</a></h3>
+          <h3><a href="{$entry['channel_url']}">{$entry['screenname']}</a> <a class="toggle" href="javascript:sda.toggle_embed('{$entry['class']}')" title="Show/Hide Embed">&#10063;</a></h3>
           {$entry['embed_stream']}
           <div class="synopsis">{$entry['synopsis']}</div>
         </div>
@@ -81,11 +82,12 @@ HTML;
         <?php
           $content = $startup = array();
           foreach ($all as $entry) {
+            if (!$entry['screenname']) $entry['screenname'] = $entry['user_name'];
             $entry['class'] = $entry['api'].'_'.str_replace("'", '-', $entry['channel_name']);
             $hidden = ($entry['online']) ? ' hidden' : '';
             $startup[$entry['class']] = ($entry['online']);
             print <<<HTML
-            <span class="new entry {$entry['class']}{$hidden}"><a href="{$entry['channel_url']}" title="{$entry['synopsis']}">{$entry['user_name']}</a></span>
+            <span class="new entry {$entry['class']}{$hidden}"><a href="{$entry['channel_url']}" title="{$entry['synopsis']}">{$entry['screenname']}</a></span>
             
 HTML;
           }
