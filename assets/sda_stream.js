@@ -48,6 +48,18 @@ function sda_stream(o) {
     }
     else $('.entry.'+id).toggleClass('alternate');
   };
+
+  // Enable/disable autoupdates
+  this.toggle_updates = function() {
+    if ($.cookie('no_updates') == 1) {
+      this.update_stream();
+      this.element.timer.countdown('resume');
+    } else {
+      this.element.timer.countdown('pause');
+    }
+    $('#toggle a.updates').toggleClass('disable');
+    $.cookie('no_updates', ($.cookie('no_updates') == 1) ? 0 : 1, {expires: 9999});
+  }
   
   // Set the width of the online area
   this.set_online_width = function(ct) {
@@ -129,6 +141,7 @@ function sda_stream(o) {
   };
   this.set_online_width($('#online > div').length);
   this.element.timer.countdown({until: +this.update_timeout, compact: true, format: 'MS', layout: '{snn}', onExpiry: $.proxy(this, 'update_stream')});
+  if ($.cookie('no_updates') == 1) this.element.timer.countdown('pause');
   //this.element.timer_sda.countdown({until: +this.update_sda_timeout, compact: true, format: 'MS', layout: '{mn}:{snn}', onExpiry: $.proxy(this, 'update_sda')});
   
 }

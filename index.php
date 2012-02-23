@@ -96,6 +96,7 @@ HTML;
     </div>
     
     <div id="toggle">
+      <a class="updates<?php if ($_COOKIE['no_updates'] == 1) { ?> disable<?php } ?>" href="javascript:sda.toggle_updates()" title="Enable/Disable Automatic Updates"></a>
       <a href="javascript:sda.toggle_embed()" title="Show/Hide All Embeds">&#10063;</a>
     </div>
 

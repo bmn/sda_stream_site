@@ -87,6 +87,16 @@ pre {
   right: 5px;
   font-size: 20px;
 }
+#toggle > a.updates {
+  display: inline-block;
+  background-image: url(icons.png);
+  background-position: -17px 0;
+  width: 16px;
+  height: 16px;
+}
+#toggle > a.updates.disable {
+  background-position: 0 0;
+}
 
 #online .alternate object, #online.hidden object, #status img, #status, #timer.hidden, #no1here.hidden, #offline .hidden { display: none }
 #online.hidden .alternate object, #status.active { display: block }
