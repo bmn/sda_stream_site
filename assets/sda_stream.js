@@ -131,7 +131,7 @@ function sda_stream(o) {
   // Set us up
   var o = (typeof o == 'object') ? o : {};
   this.url = o['url'] || 'sda_stream2/sda_stream.php';
-  this.update_timeout = 30;
+  this.update_timeout = 60;
   this.update_sda_timeout = 15*60;
   this.element = {
     'debug':      $('#debug'),
