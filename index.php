@@ -55,7 +55,6 @@
         ))
           ->sort('return strcasecmp(($a["screenname"] ? $a["screenname"] : $a["user_name"]), ($b["screenname"] ? $b["screenname"] : $b["user_name"]))', true);
         $online = $streams->filter('return ($a["online"])');
-        $all = $streams->sort('$ca = $a["screenname"] ? $a["screenname"] : $a["channel"]; $cb = $b["screenname"] ? $b["screenname"] : $b["channel"]; return strcmp($ca, $cb)');
         $online_ct = count($online);
       ?>
       <h2>Streaming Now...</h2>
@@ -81,7 +80,7 @@ HTML;
       <div id="offline">
         <?php
           $content = $startup = array();
-          foreach ($all as $entry) {
+          foreach ($streams->results as $entry) {
             if (!$entry['screenname']) $entry['screenname'] = $entry['user_name'];
             $entry['class'] = $entry['api'].'_'.str_replace("'", '-', $entry['channel_name']);
             $hidden = ($entry['online']) ? ' hidden' : '';
