@@ -221,3 +221,6 @@ $post = function(&$s) {
 };
 
 SDAExceptions::set_error_level(E_USER_NOTICE);
+
+require_once 'latest_update.php';
+$output = array('sda' => SDALatestUpdate::get()->results);
