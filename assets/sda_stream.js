@@ -1,25 +1,9 @@
 function sda_stream(o) {
-  // Update the site status
-  this.update_sda = function() {
-    $.jsonp({
-      'url':      'latest_update.php',
-      'callback': 'latest_update',
-      'timeout':  30000,
-      'context':  this,
-      'complete': function() { this.reset_timer(this.element.timer_sda, this.update_sda_timeout); },
-      'error':    function(opts, status) {
-        if (status == 'timeout') error = 'Auto-update timed out.';
-        else if (status == 'error') error = 'Problem loading auto-update.';
-      },
-      'success':  function(json, status) {
-      }
-    });
-  }
 
   // Update the stream status
   this.update_stream = function() {
     $.jsonp({
-      'url':      this.url,
+      'url': this.url,
       'callback': 'sda_stream',
       'timeout':  15000,
       'context':  this,
@@ -75,7 +59,7 @@ function sda_stream(o) {
     element.countdown('change', {until: +timer});
     return true;
   };
-  
+
   // Clean up channel names
   this.clean = function(c) {
     return c.replace(/[^a-z0-9_-]/i, '-');
@@ -84,7 +68,7 @@ function sda_stream(o) {
   this.callback = {'update_stream': {}};
   // Stream update (success)
   this.callback.update_stream.success = function(json, status) {
-    var i, ar, l, log, cls, error, online, on_exist, off_exist;
+    var i, ar, l, log, cls, error, online, on_exist, off_exist, upDate, games;
     log = '';
     
     // Update streams
@@ -115,6 +99,25 @@ function sda_stream(o) {
       this.set_online_width(online);
       if ( $('#no1here').hasClass('hidden') != (online > 0) ) { $('#no1here').toggleClass('hidden'); }
     }
+
+    // Update SDA news
+    ar = json.sda;
+    if ( (typeof(ar) == 'object') && (ar.date > this.update_sda_date) ) {
+      this.update_sda_ct = 0;
+      upDate = new Date(ar.date * 1000);
+      l = l % 10;
+      if (l == 1) l = 'st';
+      else if (l == 2) l = 'nd';
+      else if (l == 3) l = 'rd';
+      else l = 'th';
+      $('#latest a.date').html(this.months[upDate.getMonth()] + ' ' + upDate.getDate() + l);
+      games = [];
+      for (i = 0; i < ar.games.length; i++) {
+        l = ar.games[i];
+        games.push('<a href="http://www.speeddemosarchive.com/' + l.path + '">' + l.title + '</a>');
+      }
+      $('#latest span.games').html(games.join(', '));
+    }
     
     // Update the log
     ar = json.log;
@@ -132,7 +135,7 @@ function sda_stream(o) {
   var o = (typeof o == 'object') ? o : {};
   this.url = o['url'] || 'sda_stream2/sda_stream.php';
   this.update_timeout = 60;
-  this.update_sda_timeout = 15*60;
+  this.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   this.element = {
     'debug':      $('#debug'),
     'debug_log':  $('#debug div.full'),

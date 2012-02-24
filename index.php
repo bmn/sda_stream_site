@@ -11,7 +11,7 @@
       SDAExceptions::set_error_level(E_USER_NOTICE);
       $update = SDALatestUpdate::get()->results;
     ?>
-    <div id="latest"><a class="important" href="http://www.speeddemosarchive.com"><?php echo date('F jS', $update['date']); ?></a>: 
+    <div id="latest"><a class="important date" href="http://www.speeddemosarchive.com"><?php echo date('F jS', $update['date']); ?></a>: <span class="games">
     <?php
       $games = array();
       foreach ($update['games'] as $g) {
@@ -19,7 +19,7 @@
       }
       echo implode($games, ', ');
     ?>
-    </div>
+    </span></div>
     
     <div id="wrapper">
     
@@ -133,6 +133,7 @@ HTML;
         //{'url':'http://www.w00ty.com/sda/stream/sda_stream2/cache/sda_stream.js'}
       );
       sda.listed = <?php echo json_encode($startup); ?>;
+      sda.update_sda_date = <?php echo $update['date']; ?>;
     </script>
 
   </body>
