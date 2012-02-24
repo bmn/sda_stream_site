@@ -7,7 +7,6 @@ $apis = array(
   'ustream' => array(
     "animustactics" => "Batman, Castlevania RoB &amp; SotN, Final Fantasy VII, requests",
     "asdfljg" => "Sonic 4 Episode 1", // Parax
-    "battalion-wars-2-speedrun" => "Batallion Wars 2",
     "bio-shock-2" => "Bioshock 2",
     "bluestarreturnssda" => "Mario 64, Zelda: OoT, and Diddy Kong Racing",
     "cave-story-low-speedrun" => "Cave Story",
@@ -209,6 +208,8 @@ $apis = array(
     "ChristosOwen" => "Speedruns &amp; Races",
     "lemonsx" => array("add" => array("synopsis" => "Terranigma and other RPGs", "screenname" => "Lemon")),
     "thesundaysequencebreak" => array("add" => array("synopsis" => "Live speedrunning chat", "screenname" => "The Sunday Sequence Break")),
+    "pirate109" => "Super Meat Boy speedrunning, other random games occasionally",
+    "agedude44" => "Batallion Wars 2",
   ),
 );
 
