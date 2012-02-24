@@ -69,6 +69,14 @@ a img {
 pre {
   display: inline;
 }
+#offline > .entry.new:before {
+  content: 'NEW';
+  border: 1px solid #00d;
+  background-color: #55d;
+  font-size: 50%;
+  padding: 1px;
+  margin-right: 2px;
+}
 #offline > .entry:after {
   content: ' : ';
 }

@@ -86,7 +86,7 @@ HTML;
             $hidden = ($entry['online']) ? ' hidden' : '';
             $startup[$entry['class']] = ($entry['online']);
             print <<<HTML
-            <span class="new entry {$entry['class']}{$hidden}"><a href="{$entry['channel_url']}" title="{$entry['synopsis']}">{$entry['screenname']}</a></span>
+            <span class="entry {$entry['class']}{$hidden}"><a href="{$entry['channel_url']}" title="{$entry['synopsis']}">{$entry['screenname']}</a></span>
             
 HTML;
           }
