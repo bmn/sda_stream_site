@@ -69,13 +69,14 @@ a img {
 pre {
   display: inline;
 }
-#offline > .entry.new:before {
+#offline > .entry.new:before, #latest.new > .date:before {
   content: 'NEW';
   border: 1px solid #00d;
   background-color: #55d;
   font-size: 50%;
   padding: 1px;
-  margin-right: 2px;
+  margin-right: 3px;
+  vertical-align: 2px;
 }
 #offline > .entry:after {
   content: ' : ';
@@ -190,10 +191,6 @@ fieldset p br { display: none; }
   padding: 6px 8px;
   max-width: 95%;
   text-align: left;
-}
-#latest.new {
-  background-color: #C00;
-  border-color: #600;
 }
 #latest a { font-weight: normal }
 #latest a.important { font-weight: bold }

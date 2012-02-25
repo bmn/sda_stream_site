@@ -110,6 +110,7 @@ function sda_stream(o) {
       else if (l == 2) l = 'nd';
       else if (l == 3) l = 'rd';
       else l = 'th';
+      $('#latest').addClass('new');
       $('#latest a.date').html(this.months[upDate.getMonth()] + ' ' + upDate.getDate() + l);
       games = [];
       for (i = 0; i < ar.games.length; i++) {
