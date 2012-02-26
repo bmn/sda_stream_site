@@ -46,8 +46,8 @@ function sda_stream(o) {
   }
   
   // Set the width of the online area
-  this.set_online_width = function(ct) {
-    if (!ct) ct = 0;
+  this.set_online_width = function() {
+    var ct = $('#online > div').length;
     this.entry_width = 332;
     this.window_width = self.innerHeight ? self.innerWidth : (document.documentElement && document.documentElement.clientHeight) ? document.documentElement.clientWidth : document.body.clientWidth;
     this.max_per_row = Math.floor(this.window_width / this.entry_width);
@@ -95,9 +95,7 @@ function sda_stream(o) {
         }
         this.listed[cls] = l.online;
       }
-      online = $('#online > div').length;
-      this.set_online_width(online);
-      if ( $('#no1here').hasClass('hidden') != (online > 0) ) { $('#no1here').toggleClass('hidden'); }
+      if ( $('#no1here').hasClass('hidden') != ($('#online > div') > 0) ) { $('#no1here').toggleClass('hidden'); }
     }
 
     // Update SDA news
@@ -143,7 +141,8 @@ function sda_stream(o) {
     'timer':      $('#timer'),
     'timer_sda':  $('#timer_sda')
   };
-  this.set_online_width($('#online > div').length);
+  this.set_online_width();
+  $(window).resize(this.set_online_width);
   this.element.timer.countdown({until: +this.update_timeout, compact: true, format: 'MS', layout: '{snn}', onExpiry: $.proxy(this, 'update_stream')});
   if ($.cookie('no_updates') == 1) this.element.timer.countdown('pause');
   //this.element.timer_sda.countdown({until: +this.update_sda_timeout, compact: true, format: 'MS', layout: '{mn}:{snn}', onExpiry: $.proxy(this, 'update_sda')});
