@@ -96,6 +96,7 @@ function sda_stream(o) {
         this.listed[cls] = l.online;
       }
       if ( $('#no1here').hasClass('hidden') != ($('#online > div').length > 0) ) { $('#no1here').toggleClass('hidden'); }
+      this.set_online_width();
     }
 
     // Update SDA news
