@@ -66,9 +66,10 @@
           foreach($online as $entry) {
             if (!$entry['screenname']) $entry['screenname'] = $entry['user_name'];
             $entry['class'] = $entry['api'].'_'.str_replace("'", '-', $entry['channel_name']);
+            $entry['embed_id'] = ($entry['api'] == 'ustream') ? $entry['channel_id'] : $entry['channel_name'];
             print <<<HTML
         <div class="entry {$entry['class']}">
-          <h3><a href="{$entry['channel_url']}">{$entry['screenname']}</a> <a class="toggle" href="javascript:sda.toggle_embed('{$entry['class']}')" title="Show/Hide Embed">&#10063;</a></h3>
+          <h3><a href="{$entry['channel_url']}">{$entry['screenname']}</a> <a class="icon toggle" href="javascript:sda.toggle_embed('{$entry['class']}')" title="Show/Hide Embed"></a><a class="icon popout" href="javascript:sda.popout('{$entry['api']}', '{$entry['embed_id']}')" title="Popout Stream/Chat"></a></h3>
           {$entry['embed_stream']}
           <div class="synopsis">{$entry['synopsis']}</div>
         </div>
@@ -96,8 +97,8 @@ HTML;
     </div>
     
     <div id="toggle">
-      <a class="updates<?php if ($_COOKIE['no_updates'] == 1) { ?> disable<?php } ?>" href="javascript:sda.toggle_updates()" title="Enable/Disable Automatic Updates"></a>
-      <a href="javascript:sda.toggle_embed()" title="Show/Hide All Embeds">&#10063;</a>
+      <a class="icon updates<?php if ($_COOKIE['no_updates'] == 1) { ?> disable<?php } ?>" href="javascript:sda.toggle_updates()" title="Enable/Disable Automatic Updates"></a>
+      <a class="icon toggle" href="javascript:sda.toggle_embed()" title="Show/Hide All Embeds"></a>
     </div>
 
     <div id="about">

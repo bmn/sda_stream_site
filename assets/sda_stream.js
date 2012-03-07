@@ -43,6 +43,15 @@ function sda_stream(o) {
     }
     $('#toggle a.updates').toggleClass('disable');
     $.cookie('no_updates', ($.cookie('no_updates') == 1) ? 0 : 1, {expires: 9999});
+  };
+
+  // Pop out stream and chat
+  this.popout = function(api, channel) {
+    if ( (!api) || (!channel) ) return false;
+    var url = 'watch.php?api='+api+'&channel='+channel;
+    var wname = 'sda_stream_popout_'+api+'_'+this.clean(channel);
+    var opts = 'toolbar=0,scrollbars=0,location=0,statusbar=0,menubar=0,resizable=1,width=854,height=480';
+    window.open( url, wname, opts );
   }
   
   // Set the width of the online area
@@ -68,7 +77,7 @@ function sda_stream(o) {
   this.callback = {'update_stream': {}};
   // Stream update (success)
   this.callback.update_stream.success = function(json, status) {
-    var i, ar, l, log, cls, error, online, on_exist, off_exist, upDate, games;
+    var i, ar, l, log, cls, error, online, on_exist, off_exist, upDate, games, embed_id;
     log = '';
     
     // Update streams
@@ -89,7 +98,8 @@ function sda_stream(o) {
           log = '<p class="e1024">' + l.user_name + ' has gone offline.</p>\n';
         }
         else if ( (l.online == true) && (was_online == false) )  {
-          $('#online').prepend('<div class="entry ' + cls + '"><h3><a href="' + l.channel_url + '">' + l.screenname + '</a> <a class="toggle" href="javascript:sda.toggle_embed(\'' + cls + '\')" title="Show/Hide Embed">&#10063;</a></h3>' + l.embed_stream + '<div class="synopsis">' + l.synopsis + '</div></div>');
+          embed_id = (l.api == 'ustream') ? l.channel_id : l.channel_name;
+          $('#online').prepend('<div class="entry ' + cls + '"><h3><a href="' + l.channel_url + '">' + l.screenname + '</a> <a class="icon toggle" href="javascript:sda.toggle_embed(\'' + cls + '\')" title="Show/Hide Embed"></a><a class="icon popout" href="javascript:sda.popout(\'' + l.api + '\', \'' + embed_id + '\')" title="Popout Stream/Chat"></a></h3>' + l.embed_stream + '<div class="synopsis">' + l.synopsis + '</div></div>');
           $('#offline span.' + cls).addClass('hidden');
           log = '<p class="e1024">' + l.user_name + ' has come online.</p>';
         }

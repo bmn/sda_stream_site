@@ -1,0 +1,12 @@
+#channel { width: 75% }
+body.ustream #chat { min-width: 320px }
+body.justin #chat, body.twitch #chat { min-width: 221px }
+
+html, body { height: 100% }
+body { margin: 0 }
+table { border-spacing: 0; height: 100%; width: 100% }
+td { padding: 0; height: 100% }
+
+embed { height: 100%; width: 100%;}
+object { height: 100%; width: 100% }
+iframe { height: 100%; width: 100% }

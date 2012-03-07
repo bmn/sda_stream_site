@@ -21,9 +21,9 @@ div.synopsis {
   margin-top: 3px;
   height: 30px;
 }
-div.entry a.toggle {
+#online a.icon {
   float: right;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 #online {
   display: table;
@@ -90,22 +90,22 @@ pre {
   right: 0;
   font-weight: bold;
 }
+a.icon {
+  display: inline-block;
+  background-image: url(icons.png);
+  width: 16px;
+  height: 16px;
+}
 #toggle {
   position: absolute;
   top: 3px;
   right: 5px;
   font-size: 20px;
 }
-#toggle > a.updates {
-  display: inline-block;
-  background-image: url(icons.png);
-  background-position: -17px 0;
-  width: 16px;
-  height: 16px;
-}
-#toggle > a.updates.disable {
-  background-position: 0 0;
-}
+a.toggle{ background-position: 0 0; }
+a.popout{ background-position: -17px 0; }
+a.updates.disable{ background-position: -34px 0; }
+a.updates{ background-position: -51px 0; }
 
 #online .alternate object, #online.hidden object, #status img, #status, #timer.hidden, #no1here.hidden, #offline .hidden { display: none }
 #online.hidden .alternate object, #status.active { display: block }
