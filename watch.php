@@ -22,6 +22,11 @@ $embed_chat = call_user_func(array($class, 'embed_chat'), $channel);
   <head>
     <link rel="shortcut icon" href="/sda/favicon.ico" type="image/x-icon" />
     <link href="assets/watch.css" type="text/css" rel="stylesheet" media="screen"/>
+    <script type="text/javascript">
+      window.onbeforeunload = function() {
+        return 'Leaving the stream popout.';
+      };
+    </script>
   </head>
   <body class="<?php echo $api ?>">
     <table cellspacing="0">
