@@ -21,6 +21,10 @@ div.synopsis {
   margin-top: 3px;
   height: 30px;
 }
+a.icon.black {
+  border: 2px solid black;
+  background-color: #000;
+}
 #online a.icon {
   float: right;
   margin-right: 5px;
