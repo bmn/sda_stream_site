@@ -55,7 +55,7 @@ $apis = array(
     "cpkaka" => "Super Mario 64, Super Street Fighter 4",
     "crypticjacknife" => "DKC series (including DKCR), Turok: Evolution",
     "cyghfer" => "Currently: Super Mario RPG & Trip World",
-    "darkeye14" => "Metroid Prime, Rocket Knight Adventures, Contra: Hard Corps, Super Metroid, SM64",
+    "darkeye14" => "F-Zero GX",
     "darkwing_duck_sda" => array("add" => array("synopsis" => "Older Nintendo games", "screenname" => "Darkwing Duck")),
     "dee_ehn" => "Zelda (Link to the Past primarily), Megaman, Castlevania, Mario, RPGs, racing",
     "dessyreqt" => "Super Metroid, Mega Man X, SotN, and SM64",
@@ -249,6 +249,9 @@ $apis = array(
     "smilge" => "Baldur's Gate 2",
     "karls_friend" => "Ape Escape, 3D Simian Games",
     "zastbat" => "Legacy of Kain and Omega Boost",
+    "makar4eva" => "Future Tactics: The Uprising",
+    "potatohandle" => "Lost Odyssey speedrun planning. (And other stuff)",
+    "thekotti" => "Hitman, Penumbra, PC games",
   ),
 );
 
