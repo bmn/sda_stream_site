@@ -8,6 +8,7 @@
   <body>
     <?php
       require_once 'latest_update.php';
+      foreach (SDAStream::$options as $var) $$var = null;
       SDAExceptions::set_error_level(E_USER_NOTICE);
       $update = SDALatestUpdate::get()->results;
     ?>
@@ -51,18 +52,18 @@
           'raw'         => $raw,
           'post'        => $post,
         ))
-          ->sort('return strcasecmp(($a["screenname"] ? $a["screenname"] : $a["user_name"]), ($b["screenname"] ? $b["screenname"] : $b["user_name"]))', true);
+          ->sort('return strcasecmp((isset($a["screenname"]) ? $a["screenname"] : $a["user_name"]), (isset($b["screenname"]) ? $b["screenname"] : $b["user_name"]))', true);
         $online = $streams->filter('return ($a["online"])');
         $online_ct = count($online);
       ?>
       <h2>Streaming Now...</h2>
-      <div id="no1here"<?php if (count($online) > 0) echo ' class="hidden"'; ?>>
+      <div id="no1here"<?php if ($online_ct > 0) echo ' class="hidden"'; ?>>
         No-one streaming right now.
       </div>
-      <div id="online"<?php if ($_COOKIE['hide_embed'] == 1) { ?> class="hidden"<?php } ?>>
+      <div id="online"<?php if (!empty($_COOKIE['hide_embed'])) { ?> class="hidden"<?php } ?>>
         <?php
           foreach($online as $entry) {
-            if (!$entry['screenname']) $entry['screenname'] = $entry['user_name'];
+            if (empty($entry['screenname'])) $entry['screenname'] = $entry['user_name'];
             $entry['class'] = $entry['api'].'_'.str_replace("'", '-', $entry['channel_name']);
             $entry['embed_id'] = ($entry['api'] == 'ustream') ? $entry['channel_id'] : $entry['channel_name'];
             print <<<HTML
@@ -80,7 +81,7 @@ HTML;
         <?php
           $content = $startup = array();
           foreach ($streams->results as $entry) {
-            if (!$entry['screenname']) $entry['screenname'] = $entry['user_name'];
+            if (empty($entry['screenname'])) $entry['screenname'] = $entry['user_name'];
             $entry['class'] = $entry['api'].'_'.str_replace("'", '-', $entry['channel_name']);
             $hidden = ($entry['online']) ? ' hidden' : '';
             $startup[$entry['class']] = ($entry['online']);
