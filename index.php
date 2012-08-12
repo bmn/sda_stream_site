@@ -45,8 +45,6 @@
           'ttl'         => $ttl,
           'callback'    => $callback,
           'include'     => $include,
-          'add'         => $add,
-          'default'     => $default,
           'api'         => $api,
           'default_api' => $default_api,
           'single'      => $single,
