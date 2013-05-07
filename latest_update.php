@@ -31,7 +31,7 @@ class SDALatestUpdate {
 
     // Get the games
     if (!preg_match('/<div class="b">.*?<\/div>/s', $page, $content)) die(); // error stuff here
-    if ( ($ct = preg_match_all('/<a href="(\w+?\.html)">(.+?)<\/a>/m', $content[0], $games)) === false ) die();
+    if ( ($ct = preg_match_all('/<a href="(?:http\:\/\/(?:www\.)?speeddemosarchive\.com)?\/?(\w+?\.html)">(.+?)<\/a>/m', $content[0], $games)) === false ) die();
     $games2 = array();
     for ($i = 0; $i < $ct; $i++) $games2[] = array('path' => $games[1][$i], 'title' => $games[2][$i]);
 
