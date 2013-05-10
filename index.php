@@ -7,10 +7,26 @@
   </head>
   <body>
     <?php
-      require_once 'latest_update.php';
-      foreach (SDAStream::$options as $var) $$var = null;
-      SDAExceptions::set_error_level(E_USER_NOTICE);
-      $update = SDALatestUpdate::get()->results;
+      require_once 'config.php';
+      foreach (SDAStream::$options as $var) if (!isset($$var)) $$var = null;
+      if ( (!is_array($channels)) && (!is_array($apis)) )
+        die('Config not provided by config.php');
+      $streams = SDAStream::get(array(
+        'channels'    => $channels,
+        'apis'        => $apis,
+        'ttl'         => $ttl,
+        'callback'    => $callback,
+        'include'     => $include,
+        'api'         => $api,
+        'default_api' => $default_api,
+        'single'      => $single,
+        'raw'         => $raw,
+        'post'        => $post,
+      ))
+        ->sort('return strcasecmp((isset($a["screenname"]) ? $a["screenname"] : $a["user_name"]), (isset($b["screenname"]) ? $b["screenname"] : $b["user_name"]))', true);
+      $online = $streams->filter('return ($a["online"])');
+      $online_ct = count($online);
+      $update = $output['sda'];
     ?>
     <div id="latest"><a class="important date" href="http://www.speeddemosarchive.com"><?php echo date('F jS', $update['date']); ?></a>: <span class="games">
     <?php
@@ -36,26 +52,6 @@
         ?>
       </div>
       -->
-      <?php
-        require_once 'config.php';
-        if ( (!is_array($channels)) && (!is_array($apis)) )
-          die('Config not provided by config.php');
-        $streams = SDAStream::get(array(
-          'channels'    => $channels,
-          'apis'        => $apis,
-          'ttl'         => $ttl,
-          'callback'    => $callback,
-          'include'     => $include,
-          'api'         => $api,
-          'default_api' => $default_api,
-          'single'      => $single,
-          'raw'         => $raw,
-          'post'        => $post,
-        ))
-          ->sort('return strcasecmp((isset($a["screenname"]) ? $a["screenname"] : $a["user_name"]), (isset($b["screenname"]) ? $b["screenname"] : $b["user_name"]))', true);
-        $online = $streams->filter('return ($a["online"])');
-        $online_ct = count($online);
-      ?>
       <h2>Streaming Now...</h2>
       <div id="no1here"<?php if ($online_ct > 0) echo ' class="hidden"'; ?>>
         No-one streaming right now.

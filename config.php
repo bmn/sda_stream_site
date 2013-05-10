@@ -311,7 +311,6 @@ $post = function(&$s) {
   $s->set_embed_dimensions(320, 260);
 };
 
-SDAExceptions::set_error_level(E_USER_NOTICE);
-
 require_once 'latest_update.php';
+SDAExceptions::set_error_level(E_USER_NOTICE);
 $output = array('sda' => SDALatestUpdate::get()->results);
