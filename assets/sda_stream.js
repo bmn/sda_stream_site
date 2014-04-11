@@ -144,7 +144,7 @@ function sda_stream(o) {
   // Set us up
   var o = (typeof o == 'object') ? o : {};
   this.url = o['url'] || 'sda_stream2/sda_stream.php';
-  this.update_timeout = 60;
+  this.update_timeout = 120;
   this.months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
   this.element = {
     'debug':      $('#debug'),
