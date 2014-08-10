@@ -1,6 +1,6 @@
 #channel { width: 75% }
 body.ustream #chat { min-width: 320px }
-body.justin #chat, body.twitch #chat { min-width: 221px }
+body.justin #chat, body.twitch #chat, body.hitbox #chat { min-width: 221px }
 
 html, body { height: 100% }
 body { margin: 0 }
