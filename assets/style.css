@@ -111,9 +111,9 @@ a.popout{ background-position: -17px 0; }
 a.updates.disable{ background-position: -34px 0; }
 a.updates{ background-position: -51px 0; }
 
-#online .alternate object, #online.hidden object, #status img, #status, #timer.hidden, #no1here.hidden, #offline .hidden { display: none }
+#online .alternate object, #online.hidden object, #online .alternate iframe, #online.hidden iframe, #status img, #status, #timer.hidden, #no1here.hidden, #offline .hidden { display: none }
 a.trk { display: none !important }
-#online.hidden .alternate object, #status.active { display: block }
+#online.hidden .alternate object, #online.hidden .alternate iframe, #status.active { display: block }
 #status img.active { display: inline }
 
 #no1here { text-align: center }
