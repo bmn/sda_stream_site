@@ -72,7 +72,7 @@ HTML;
           }
         ?>
       </div>
-      <h2>Lazy Bums...</h2>
+      <h2>Currently Offline...</h2>
       <div id="offline">
         <?php
           $content = $startup = array();
@@ -103,7 +103,7 @@ HTML;
         <p>Click on a username or the player itself to open the full page for that channel. This icon: <a class="icon popout black"></a> will open a popout with the stream and its chat - you can use F11 to make it fullscreen. This icon: <a class="icon toggle black"></a> toggles between showing and hiding the Flash stream - the one at the top right affects all streams on the page, and the current setting is stored between sessions.</p>
         <p>The status updates every 60 seconds; this is shown at the bottom-right corner of the screen. You can disable this behaviour by clicking this icon at the top right of the page: <a class="icon updates black"></a> so it is no longer green: <a class="icon updates disable black"></a>. In some cases an update can get stuck at 0 seconds - if this happens please refresh the page or click the above icon twice to reset the timer.</p>
         <p>The top left of the page shows a summary of the latest update on the main SDA site. Click the date to read the full update, or a game title to go to that game's page on SDA. This section updates every 15 minutes.</p>
-        <p>This page supports the following providers: <a href="http://www.justin.tv">Justin</a>, <a href="http://www.twitch.tv">Twitch</a>, <a href="http://www.ustream.tv">Ustream</a>. We may add support for other providers if they provide suitable API functionality and there is demand from channel owners. As of July '12, <a href="http://www.livestream.com">Livestream</a> and <a href="http://www.own3d.tv">own3d</a> do not provide suitable APIs.</p>
+        <p>This page supports the following providers: <a href="http://www.hitbox.tv">Hitbox</a>, <a href="http://www.twitch.tv">Twitch</a>, <a href="http://www.ustream.tv">Ustream</a>. We may add support for other providers if they provide suitable API functionality and there is demand from channel owners. As of July '12, <a href="http://www.livestream.com">Livestream</a> and <a href="http://www.own3d.tv">own3d</a> do not provide suitable APIs.</p>
         <p>If you're an SDA member and want to be included, your synopsis changed, or even your stream removed from the list entirely, <a href="http://forum.speeddemosarchive.com/post/live_stream_status__w00ty.com_updated_info_16_nov_11.html">full details are available in this forum topic</a>.</p>
         <p><a href="https://github.com/bmn/sda_stream_site">This page</a> uses the <a href="https://github.com/bmn/sda_stream2">sda_stream2</a> library. Copyright &copy; Ian "bmn" Bennett 2010-12 and provided under a <a href="http://creativecommons.org/licenses/by-sa/2.0/uk/">Creative Commons Attribution-Share Alike Licence</a>.</p>
       </div>
