@@ -345,7 +345,7 @@ $apis = array(
 
 $include = array('user_name', 'channel_id', 'channel_name', 'channel_url', 'embed_stream', 'online', 'api');
 $callback = 'sda_stream';
-$ttl = 2;
+$ttl = 1;
 
 $post = function(&$s) {
   $s->set_embed_dimensions(320, 260);
