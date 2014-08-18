@@ -130,8 +130,15 @@ function sda_stream(o) {
     }
     
     // Update the log
-    ar = json.log;
+    ar = json['log'];
     if (typeof(ar) == 'object') {
+      for (i = 0; i < ar.length; i++) {
+        log = log+ '<p class="e' + ar[i].level + '">' + ar[i].message + '</p>\n';
+      }
+    }
+    ar = json['cached_log'];
+    if (typeof(ar) == 'object') {
+      log = log + '<p>Cache Generation:</p>\n';
       for (i = 0; i < ar.length; i++) {
         log = log+ '<p class="e' + ar[i].level + '">' + ar[i].message + '</p>\n';
       }

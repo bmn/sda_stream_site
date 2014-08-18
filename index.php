@@ -115,6 +115,12 @@ HTML;
         <?php foreach (SDAExceptions()->exceptions as $e): ?>
           <p class="e<?php echo $e->getCode() ?>"><?php echo $e->getMessage() ?></p>
         <?php endforeach ?>
+        <?php if ($streams->log): ?>
+          <p>Cache Generation:</p>
+          <?php foreach ($streams->log as $e): ?>
+            <p class="e<?php echo $e['level'] ?>"><?php echo $e['message'] ?></p>
+          <?php endforeach ?>
+        <?php endif ?>
       </div>
     </div>
 
