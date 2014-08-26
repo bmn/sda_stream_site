@@ -8,6 +8,7 @@ if (!is_string($channel)) die('Invalid Channel input');
 
 // Load the API class
 $path = dirname(__FILE__).'/sda_stream2/sda_stream_'.$api.'.php';
+if (preg_match('/[^\w_]/', $api)) die('Invalid input');
 if (!is_readable($path)) die('Invalid API');
 require_once($path);
 $class = 'SDAStream'.ucfirst($api);
