@@ -343,12 +343,17 @@ $apis = array(
   ),
 );
 
-$include = array('user_name', 'channel_id', 'channel_name', 'channel_url', 'embed_stream', 'online', 'api');
+$include = array('user_name', 'channel_id', 'channel_name', 'channel_url', 'embed_stream', 'online', 'api', 'description');
 $callback = 'sda_stream';
 $ttl = 1;
 
 $post = function(&$s) {
   $s->set_embed_dimensions(320, 260);
+  foreach ($s->results as &$e) {
+	if ( ($e['online']) && (stripos($e['description'], '[nosda]') !== false) )
+		$e['online'] = false;
+	unset($e['description']);
+  }
 };
 
 require_once 'latest_update.php';
