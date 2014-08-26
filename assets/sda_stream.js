@@ -1,7 +1,13 @@
 function sda_stream(o) {
 
+  var self = this;
+
   // Update the stream status
   this.update_stream = function() {
+    if (this.blurred) {
+      this.load_on_focus = true;
+      return false;
+    }
     $.jsonp({
       'url': this.url,
       'callback': 'sda_stream',
@@ -148,6 +154,18 @@ function sda_stream(o) {
     this.element.debug.removeClass('error');
   };
   
+  // Tab blur/focus handlers
+  this.callback.onBlur = function(event) {
+    self.blurred = true;
+  };
+  this.callback.onFocus = function(event) {
+    self.blurred = false;
+    if (self.load_on_focus == true) {
+      self.update_stream();
+      self.load_on_focus = false;
+    }
+  };
+  
   // Set us up
   var o = (typeof o == 'object') ? o : {};
   this.url = o['url'] || 'sda_stream2/sda_stream.php';
@@ -164,5 +182,6 @@ function sda_stream(o) {
   this.element.timer.countdown({until: +this.update_timeout, compact: true, format: 'MS', layout: '{snn}', onExpiry: $.proxy(this, 'update_stream')});
   if ($.cookie('no_updates') == 1) this.element.timer.countdown('pause');
   //this.element.timer_sda.countdown({until: +this.update_sda_timeout, compact: true, format: 'MS', layout: '{mn}:{snn}', onExpiry: $.proxy(this, 'update_sda')});
+  $.winFocus(this.callback.onBlur, this.callback.onFocus);
   
 }

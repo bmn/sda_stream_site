@@ -128,6 +128,7 @@ HTML;
     <script type="text/javascript" src="assets/jquery.jsonp-2.1.4.min.js"></script>
     <script type="text/javascript" src="assets/jquery.countdown.pack.js"></script>
     <script type="text/javascript" src="assets/jquery.cookie.js"></script>
+    <script type="text/javascript" src="assets/jquery.visibility.min.js"></script>
     <script type="text/javascript" src="assets/google-analytics.js"></script>
     <script type="text/javascript" src="assets/sda_stream.js"></script>
     <script type="text/javascript">
