@@ -124,7 +124,7 @@ HTML;
       </div>
     </div>
 
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+    <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/jquery.jsonp-2.1.4.min.js"></script>
     <script type="text/javascript" src="assets/jquery.countdown.pack.js"></script>
     <script type="text/javascript" src="assets/jquery.cookie.js"></script>
