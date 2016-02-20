@@ -56,7 +56,7 @@
       <div id="no1here"<?php if ($online_ct > 0) echo ' class="hidden"'; ?>>
         No-one streaming right now.
       </div>
-      <div id="online"<?php if (!empty($_COOKIE['hide_embed'])) { ?> class="hidden"<?php } ?>>
+      <div id="online">
         <?php
           foreach($online as $entry) {
             if (empty($entry['screenname'])) $entry['screenname'] = $entry['user_name'];
@@ -93,7 +93,7 @@ HTML;
     
     <div id="toggle">
       <a class="icon updates<?php if ($_COOKIE['no_updates'] == 1) { ?> disable<?php } ?>" href="javascript:sda.toggle_updates()" title="Enable/Disable Automatic Updates"></a>
-      <a class="icon toggle" href="javascript:sda.toggle_embed()" title="Show/Hide All Embeds"></a>
+      <!--<a class="icon toggle" href="javascript:sda.toggle_embed()" title="Show/Hide All Embeds"></a>-->
     </div>
 
     <div id="about">

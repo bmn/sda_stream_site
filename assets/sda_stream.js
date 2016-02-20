@@ -26,17 +26,10 @@ function sda_stream(o) {
   
   // Set the visibility of the embeds
   this.toggle_embed = function(id) {
-    if (!id) {
-      if ($.cookie('hide_embed') == 1) {
-        $('#online').removeClass('hidden');
-        $.cookie('hide_embed', 0, {expires: 9999});
-      } else {
-        $('#online').addClass('hidden');
-        $.cookie('hide_embed', 1, {expires: 9999});
+    var e = $('.entry.'+id);
+    e.toggleClass('show');
       }
-      $('.entry').removeClass('alternate');
     }
-    else $('.entry.'+id).toggleClass('alternate');
   };
 
   // Enable/disable autoupdates
