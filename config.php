@@ -38,6 +38,7 @@ $apis = array(
     "ahhee" => "DuckTales Remastered", // no recent 15/08, last hl 13/09, added 14/04/11
     "aleckermit" => "007: Agent Under Fire", // no content 15/8
     "AllTheHighwinds" => "Zone of the Enders: The 2nd Runner, SaGa Frontier", // recovered 15/08/03
+    "alukraid" => array("add" => array("synopsis" => "Metroid games/romhacks, Ys, casual", "screenname" => "Shiden")), // moved 16/02/11
     "andreluclevesque" => array("add" => array("synopsis" => "Amnesia, Super Meat Boy, Paper Mario, Tales of Symphonia, Mario Sunshine and Lost Kingdoms 2", "screenname" => "Andr&eacute;LucL&eacute;vesque")), // no content 15/08, added 12/02/23
     "andrewg1990" => "Mario (duh), classic arcade games", // added 11/05/20
     "aneeslol" => "Super Mario Sunshine, Glover", // added 12/07/01
@@ -385,9 +386,9 @@ $apis = array(
     "zewing" => "Mega Man X Series, Star Fox Adventures, Star Fox Assault, Star Fox 64", // added 13/04/09
     "zombietraine" => "Castlevania 2: Simon's Quest and other 8-bit/16-bit RPGs", // added 13/04/09
   ),
+  /* All Hitbox channels abandoned 11/2/16
   "hitbox" => array(
-    "alukraid" => array("add" => array("synopsis" => "Metroid games/romhacks, Ys, casual", "screenname" => "Shiden")), // moved 15/08/03
-  ),
+  ), */
 );
 
 $include = array('user_name', 'channel_id', 'channel_name', 'channel_url', 'embed_stream', 'online', 'api', 'description');
