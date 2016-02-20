@@ -28,6 +28,11 @@ function sda_stream(o) {
   this.toggle_embed = function(id) {
     var e = $('.entry.'+id);
     e.toggleClass('show');
+    var iframe = e.children('iframe');
+    if (iframe.length == 1) {
+      f = $(iframe[0]);
+      if (f.attr('src') != f.data('src')) {
+        f.attr('src', f.data('src'));
       }
     }
   };
@@ -176,5 +181,9 @@ function sda_stream(o) {
   if ($.cookie('no_updates') == 1) this.element.timer.countdown('pause');
   //this.element.timer_sda.countdown({until: +this.update_sda_timeout, compact: true, format: 'MS', layout: '{mn}:{snn}', onExpiry: $.proxy(this, 'update_sda')});
   $.winFocus(this.callback.onBlur, this.callback.onFocus);
-  
+  $('iframe').each(function() {
+    f = $(this);
+    f.data('src', f.attr('src'));
+    f.attr('src', 'about:blank');
+  });
 }
