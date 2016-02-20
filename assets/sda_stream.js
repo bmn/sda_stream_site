@@ -101,13 +101,13 @@ function sda_stream(o) {
         if ( (l.online == false) && (was_online == true) )  {
           $('#online div.' + cls).remove();
           $('#offline span.' + cls).removeClass('hidden');
-          log = '<p class="e1024">' + l.user_name + ' has gone offline.</p>\n';
+          log = log + '<p class="e1024">' + l.user_name + ' has gone offline.</p>\n';
         }
         else if ( (l.online == true) && (was_online == false) )  {
           embed_id = (l.api == 'ustream') ? l.channel_id : l.channel_name;
           $('#online').prepend('<div class="entry ' + cls + '"><h3><a href="' + l.channel_url + '">' + l.screenname + '</a> <a class="icon toggle" href="javascript:sda.toggle_embed(\'' + cls + '\')" title="Show/Hide Embed"></a><a class="icon popout" href="javascript:sda.popout(\'' + l.api + '\', \'' + embed_id + '\')" title="Popout Stream/Chat"></a></h3>' + l.embed_stream + '<div class="synopsis">' + l.synopsis + '</div></div>');
           $('#offline span.' + cls).addClass('hidden');
-          log = '<p class="e1024">' + l.user_name + ' has come online.</p>';
+          log = log + '<p class="e1024">' + l.user_name + ' has come online.</p>';
         }
         this.listed[cls] = l.online;
       }
@@ -146,7 +146,7 @@ function sda_stream(o) {
     if (typeof(ar) == 'object') {
       log = log + '<p>Cache Generation:</p>\n';
       for (i = 0; i < ar.length; i++) {
-        log = log+ '<p class="e' + ar[i].level + '">' + ar[i].message + '</p>\n';
+        log = log + '<p class="e' + ar[i].level + '">' + ar[i].message + '</p>\n';
       }
     }
     if (log == '') log = '<p class="e1024">No errors.</p>\n';
