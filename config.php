@@ -396,7 +396,7 @@ $callback = 'sda_stream';
 $ttl = 1;
 
 $post = function(&$s) {
-  $s->set_embed_dimensions(320, 260);
+  $s->set_embed_dimensions(320, 212);
   foreach ($s->results as &$e) {
 	if ( ($e['online']) && (stripos($e['description'], '[nosda]') !== false) )
 		$e['online'] = false;
